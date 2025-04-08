@@ -1,0 +1,22 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: apr8-chatbot-vllm-gitops
+  description: This is GitOps manifest for apr8-chatbot-vllm   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:
+    # ArgoCD apps from this template used rhtap-gitops as the grouping
+    argocd/app-selector: rhtap/gitops=apr8-chatbot-vllm
+    janus-idp.io/tekton: apr8-chatbot-vllm 
+    backstage.io/kubernetes-id: apr8-chatbot-vllm 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:apr8-chatbot-vllm  

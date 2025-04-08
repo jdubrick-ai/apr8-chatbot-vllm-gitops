@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: apr8-chatbot-vllm-database-config
+data:
+  VECTORDB_HOST: "apr8-chatbot-vllm-database"
+  VECTORDB_PORT: ""
